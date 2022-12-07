@@ -1,5 +1,3 @@
-Mini-Projeto 4 - Data App - Dashboard Interativo Para Análise de Chamados de Suporte
-
 Para executar o Dashboard:
 
 1- Instale o Anaconda Python no seu computador.
