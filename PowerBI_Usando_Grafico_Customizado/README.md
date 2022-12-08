@@ -81,6 +81,29 @@ Esses sao os dados que inserimos em cada eixo para montagem do grafico:
 ![image](https://user-images.githubusercontent.com/79231882/206528403-9c8a86dc-f339-4cd8-bf19-926e99eaccb1.png)
 
 
+Aqui podemos formatar a candlestick, em que:
+
+bullish candlestick: tendencia de alta, o valor da cotacao de fechamento eh maior que o valor de abertura
+
+bearish candlestick: tendencia de baixa, o valor da cotacao de fechamento eh menor que o valor de abertura
+
+![image](https://user-images.githubusercontent.com/79231882/206528619-729063f1-19b7-41f0-9ccd-b035652e8a7e.png)
+
+
+Esse eh o grafico desenvolvido com os dados do indice SP500 que trouxemos:
+
+![image](https://user-images.githubusercontent.com/79231882/206528786-cfbfb5f2-d269-4b51-b71f-aca5eee45cee.png)
+
+
+
+Nesta visualizacao foi adicionado um filtro apenas para mostrar as cotacoes diaria do ano de 2020:
+
+![image](https://user-images.githubusercontent.com/79231882/206529029-855e4240-7af7-4e8f-bbba-fe5b0da73f02.png)
+
+![image](https://user-images.githubusercontent.com/79231882/206529182-b358d4ba-bf17-43d7-9260-a05e262ceaf2.png)
+
+
+
 
 
 
