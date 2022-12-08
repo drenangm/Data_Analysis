@@ -2,10 +2,8 @@
 
 # Projeto - Podemos Prever o Tempo de Sobrevivência dos Pacientes 1 Ano Após Receberem um Transplante?
 
-# Leia a definição do projeto e detalhes sobre a fonte de dados no manual em pdf no Capítulo 9.
-
 # Diretório de trabalho
-setwd("C:/MyBkp/Cursos/DSA/DSA_Formacao_Cientista_Dados/Curso05_Business-Analytics/Cap09/1-Cap09-R")
+setwd("...YOUR_PATH/Health_Analytics_Transplant_Surviving_Prediction")
 getwd()
 
 # Pacotes
@@ -316,10 +314,3 @@ accuracy(unlist(modelo_v2_pred_2), dados_teste2$PTIME)
 # deve ser usado como versão final.
 
 # Sim, conseguimos prever o tempo de sobrevivência dos pacientes 1 ano após receberem um transplante.
-
-# Fim
-
-
-
-
-
