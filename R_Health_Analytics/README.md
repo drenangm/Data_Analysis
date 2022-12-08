@@ -440,38 +440,256 @@ Vamos separar as variáveis categóricas e numéricas em treino:
 
 ![image](https://user-images.githubusercontent.com/79231882/206557684-72e65f34-4049-41f6-a92d-781458ed1c75.png)
 
+![image](https://user-images.githubusercontent.com/79231882/206557870-40572bd7-674f-4cb1-87e7-f84b9950724f.png)
+
+
+![image](https://user-images.githubusercontent.com/79231882/206557913-8846a162-7454-4309-81fa-fca690c9137c.png)
+
+
+Vamos separar as variáveis categóricas e numéricas em teste:
+
+![image](https://user-images.githubusercontent.com/79231882/206557961-7a6ba7e1-101e-4783-af3c-0f5ef7a54f7c.png)
+
+
+![image](https://user-images.githubusercontent.com/79231882/206558004-74fe0df5-1546-4e9d-a921-f740c1bf90d1.png)
+
+
+Vamos fazer a padronização das variáveis numéricas em treino:
+
+![image](https://user-images.githubusercontent.com/79231882/206558078-de561ff4-6c70-4748-8785-18412bd7509f.png)
+
+
+Fazemos a padronização das variáveis numéricas em teste:
+
+![image](https://user-images.githubusercontent.com/79231882/206558162-cd940da2-19ef-4474-832c-d6dd3a4dbf63.png)
+
+
+Vamos aplicar novamente o filtro para remoção dos registros dos anos 2001 e 2002 em treino e teste:
+
+![image](https://user-images.githubusercontent.com/79231882/206558225-44b5517e-27e1-4034-9268-64b2f9842cda.png)
+
+
+Vamos criar novamente o modelo agora com o outro dataset de treino (ja padronizado e com os filtros):
+
+![image](https://user-images.githubusercontent.com/79231882/206558287-d99074c6-fde0-4dcb-9374-b6a78badc20f.png)
+
+![image](https://user-images.githubusercontent.com/79231882/206558314-1bb8f047-017b-43e6-954b-fd68c6164a9a.png)
+
+![image](https://user-images.githubusercontent.com/79231882/206558387-686e54aa-4475-41a8-84be-b2c251deb08e.png)
+
+
+Vemos que o R^2 obtido eh muito parecido ao anterior
+
+Observamos o mesmo efeito no nível de significância das variáveis
+
+
+Vamos avaliar o modelo com os dados de treino final:
+
+![image](https://user-images.githubusercontent.com/79231882/206558506-e63770ec-f140-4d64-b57e-3aa499d5a9ce.png)
+
+![image](https://user-images.githubusercontent.com/79231882/206558532-f5b61379-e147-4966-b576-eb728123dc27.png)
+
+
+Avaliaremos com os dados de teste:
+
+![image](https://user-images.githubusercontent.com/79231882/206558584-17a17f9e-ab3c-4c38-9109-8c6d75c3313f.png)
+
+
+Distribuição do erro de validação:
+
+![image](https://user-images.githubusercontent.com/79231882/206558631-b254a228-1d13-4657-a7dd-4acc0246ed5e.png)
+
+
+![image](https://user-images.githubusercontent.com/79231882/206558656-64924bc5-f7c8-415e-948f-bd0eb129c946.png)
+
+
+Vemos que o resultado obtido continua muito parecido
+
+
+Vamos a algumas razoes sobre os resultados que obtemos:
+
+- sempre precisamos experimentar diferentes métodos para tirarmos nossas próprias conclusões
+
+- não podemos decorar regras, temos boas praticas que devemos procurar observa-las mas analise critica de quem esta desenvolvendo uma solução para o problema eh fundamental
+
+- embora os resultados apresentados sejam parecidos, a padronização deve ser aplicada separadamente entre dados de treino e de teste, para fazermos apenas um estudo nos dados observando o comportamento em diferentes métodos não ha problema com o procedimento que adotamos, mas para colocar o modelo em produção devemos padronizar os dados separadamente
+
+
+## Desfazendo a escala dos dados
+
+Por que precisamos da padronização nos dados?
+
+Apenas para treinarmos o modelo! O algoritmo de aprendizado de maquina espera receber os dados em um padrão para que ele possa compreende-los
+
+Mas para entregarmos os resultados para uma apresentação, apresentar aos tomadores de decisões nos precisamos desfazer a padronização após o treino do modelo
+
+
+Vamos desfazer a escala dos dados:
+
+![image](https://user-images.githubusercontent.com/79231882/206558963-e28ff416-e0d5-4958-af1e-062f1c7c3501.png)
+
+
+Removemos valores NA das variáveis que usaremos para aplicar o unscale
+
+obs: quando criamos o modelo “lm” ele automaticamente remove os valores NA do treinamento
+
+![image](https://user-images.githubusercontent.com/79231882/206559019-8d4d048f-f61d-4622-979b-33afa46c49f2.png)
+
+
+Lembremos que dados2 contem so dados brutos, aos quais não aplicamos a padronização
+
+
+Vamos aplicar o filtro para remoção dos anos 2001 e 2002 (na porção de teste apenas)
+
+![image](https://user-images.githubusercontent.com/79231882/206559086-48805f91-7b58-44c8-aa40-857494b9898d.png)
+
+
+Fazemos as previsões e comparamos com os dados originais para tirarmos os dados de performance:
+
+![image](https://user-images.githubusercontent.com/79231882/206559143-578d9ee9-4df2-48bd-8e50-69431b6b3747.png)
+
+
+![image](https://user-images.githubusercontent.com/79231882/206559170-34a74a61-1fed-4843-8505-ef8a5d590439.png)
+
+
+O comportamento observado no histograma eh praticamente o mesmo com os dados padronizados, o que ja era esperado
+
+
+A padronização eh um artificio matemático que nos utilizamos para fazermos o treinamento dos modelos, porem para comunicarmos os dados em um ambiente externo ao da analise ou experimentação, nos devemos retornar sempre os dados ao seu padrão original
+
+
+## Modelagem preditiva - Versão 2
+
+
+Modelagem Preditiva com Modelo de Rede Neural
+
+Vamos iniciar preparando os dados (vamos utilizar os dataset dados_final, que contem variáveis numéricas padronizadas, variáveis categóricas e o filtro do período de interesse)
+
+Também iremos trabalhar apenas com as variáveis utilizadas no modelo da versão 1 (variaveis_amostra)
+
+![image](https://user-images.githubusercontent.com/79231882/206559362-b25444e4-5ea5-4b64-b530-1639e0bb5567.png)
+
+![image](https://user-images.githubusercontent.com/79231882/206559399-e96ba817-313d-4338-9cb8-dbcf1168a9d3.png)
+
+
+Retorna somente as variáveis que não são do tipo fator:
+
+![image](https://user-images.githubusercontent.com/79231882/206559467-8bfd9216-cdda-4a8b-8060-feb2b411b86d.png)
+
+![image](https://user-images.githubusercontent.com/79231882/206559506-10c3d4b8-1936-4365-8061-91bb179841dc.png)
+
+
+Retorna o nome das variáveis numéricas:
+
+![image](https://user-images.githubusercontent.com/79231882/206559567-f09712e0-0cd4-4de9-9dfe-96d4dc859302.png)
+
+![image](https://user-images.githubusercontent.com/79231882/206559598-a8befdd8-060b-4afb-afdd-76718bf86449.png)
+
+
+Iremos gerar uma versão final do dataframe com variáveis dummy:
+
+![image](https://user-images.githubusercontent.com/79231882/206559688-13c36554-adf8-406f-85e3-a4717bfb1127.png)
+
+
+Quando geramos o modelo com regressão linear nos não precisamos criar esta variáveis dummy porque a função “lm” ja faz isso por nos (basta observar o summary do modelo e ver que, por exemplo, ele criou uma serie de dummies para REGION; REGION1, REGION2, REGION3, …)
+
+Veja abaixo as variáveis dummies criada pelo algoritmo do lm:
+
+![image](https://user-images.githubusercontent.com/79231882/206559769-560015f6-09bc-4055-9838-cf2e21809fcb.png)
+
+
+Na rede neural nos precisamos preparar o dataframe com estas variáveis dummy
+
+A variável dummy eh a aplicação de one-hot-encoding, vejamos a variável REGION1, por exemplo:
+
+![image](https://user-images.githubusercontent.com/79231882/206559853-52b1d436-4293-49c6-88e4-853196259061.png)
+
+
+Na coluna 1 acima (relacionada a variável REGION1) temos que sera marcado o valor 0 se o paciente não pertence a REGION1 e sera marcado 1 quando ele pertencer a REGION1
+
+Na REGION2 este mesmo paciente tera marcação igual 0 pois pela regra deste problema este paciente não pode pertencer a duas regiões diferentes
+
+Isto foi feito utilizando a funcao “class.ind” do pacote NNET
+
+Criamos as variáveis dummy para as variáveis do tipo categórica
+
+Vamos acertar os nomes das variáveis dummy que foram criadas para que fiquem bem identificadas:
+
+![image](https://user-images.githubusercontent.com/79231882/206559976-5d8df077-b612-4e6d-9b9e-abd5613ee037.png)
+
+![image](https://user-images.githubusercontent.com/79231882/206560003-6cca4f2d-1956-42e0-a42a-9e1e03862827.png)
+
+
+![image](https://user-images.githubusercontent.com/79231882/206560047-29def049-f592-4a6e-ac46-127b2c7232fa.png)
+
+
+Dividimos os dados em treino e teste na proporção 70/30:
+
+![image](https://user-images.githubusercontent.com/79231882/206560100-90ecf8a5-be55-4f8f-8754-b76c4f0eaec5.png)
+
+
+Verificamos os resultados das variáveis para apenas a primeira amostra:
+
+![image](https://user-images.githubusercontent.com/79231882/206560169-5e61366b-4fde-441d-be78-afc6a1f8bebc.png)
+
+
+Vamos criar o modelo:
+
+![image](https://user-images.githubusercontent.com/79231882/206560214-05d26373-f402-40b2-ac8f-3881780c1093.png)
+
+
+→ hiperparametros dos modelo:
+
+- criamos uma saída linear (linear.output), para indicarmos que sera uma rede neural regressora
+
+- duas camadas ocultas (hidden)
+
+- definição do numero de passos (stepmax), se este parâmetro não for ajustado ele responderá que não consegue chegar a convergência porque não ha tempo suficiente para isso, a rede neural eh um modelo que executa muitas operações matemáticas
+
+
+## Avaliação do modelo Versão 2
+
+
+Vamos criar um plot do modelo_v2:
+
+![image](https://user-images.githubusercontent.com/79231882/206560365-57c4372d-5257-4a16-b9f3-60d8bd664c7a.png)
+
+
+![image](https://user-images.githubusercontent.com/79231882/206560413-6e3e21d0-a56e-4107-a96a-c536e949e329.png)
+
+
+Vamos a avaliação deste modelo
+
+
+Avaliação dos dados de treino:
+
+![image](https://user-images.githubusercontent.com/79231882/206560487-ed869cf0-a57c-43ab-a5f7-a69a16a10e5c.png)
+
+
+Observação: para fazermos as previsões com o modelo de rede neural nos utilizamos a função compute, no modelo de regressão linear utilizamos a função predict
+
+Avaliação dos dados de teste:
+
+![image](https://user-images.githubusercontent.com/79231882/206560606-3e28dd0c-3f27-4a93-a136-c921ad50b10b.png)
+
+Os resultados das métricas foram muito parecidos, o que nos leva a avaliar que este modelo possui um bom equilíbrio
 
 
 
+## Conclusão
+
+Voltamos a pergunta que gerou o problema ao qual trabalhamos:
+
+**Podemos prever o tempo de sobrevivência dos pacientes 1 ano após receberem um transplante?**
+
+**Sim, conseguimos prever o tempo de sobrevivência dos pacientes 1 ano após receberem um transplante.**
 
 
+### Qual modelo escolheremos?
 
+### **O modelo de regressão linear apresentou uma taxa de erro menor e, portanto, deve ser usado como versão final**
 
+### Podemos avaliar também que para problemas com dados um pouco mais simples, que possuem um padrão claro a regressão linear se mostra bastante satisfatória
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### Sem contar também que a regressão linear oferece maior interpretabilidade o que facilita compreendermos os resultados que obtemos, o que eh fundamental na area medica
 
