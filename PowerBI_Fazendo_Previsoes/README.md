@@ -102,5 +102,5 @@ O que temos de configuracao disponivel para as previsoes eh o que foi mostrado a
 
 Esta ferramenta eh bem mais limitada que opcoes que temos em Python ou R para analisar series temporais. O proposito do Power BI eh outro. 
 
-Observa-se que a Microsoft em ao longo do tempo adicionando funcionalidades ao Power BI, porem nao vem transformando ele em uma ferramenta de machine learning. O pocionamento que percebemos eh que ele permaneca como uma ferramenta de self service BI.
+Observa-se que a Microsoft vem ao longo do tempo adicionando funcionalidades ao Power BI, porem nao vem transformando ele em uma ferramenta de machine learning. O pocionamento que percebemos eh que ele permaneca como uma ferramenta de self service BI.
 
