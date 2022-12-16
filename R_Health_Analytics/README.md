@@ -685,7 +685,7 @@ Voltamos a pergunta que gerou o problema ao qual trabalhamos:
 **Sim, conseguimos prever o tempo de sobrevivência dos pacientes 1 ano após receberem um transplante.**
 
 
-### Qual modelo escolheremos?
+## Qual modelo escolheremos?
 
 ### **O modelo de regressão linear apresentou uma taxa de erro menor e, portanto, deve ser usado como versão final**
 
