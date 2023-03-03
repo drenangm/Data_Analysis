@@ -5,4 +5,6 @@ The dataset was obtained from a Kaggle based project (daily updated) here:
 
 https://www.kaggle.com/datasets/wyattowalsh/basketball
 
+Most part of the project was developed with Python + sqlite3 package in order to extract data for this analysis.
+
 Further details about my analysis and insights about it, you can check in my Jupyter Notebook attached here.
