@@ -11,7 +11,7 @@ https://www.kaggle.com/datasets/wyattowalsh/basketball
 <br/>
 <br/>
 
-Follow the steps below:
+<b>Follow the steps below:</b>
 <br/>
 
 1- You must download NBA Database (daily uptdated)
