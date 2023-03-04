@@ -21,3 +21,8 @@ https://www.kaggle.com/datasets/wyattowalsh/basketball
 3- Connect to the SQLite database via sqlite3 library to explore the data
 
 4- Have fun!
+<br/>
+<br/>
+<br/>
+<br/>
+There are many interactive plots using plotly express in this notebook, so to see them you must to execute this notebook.
