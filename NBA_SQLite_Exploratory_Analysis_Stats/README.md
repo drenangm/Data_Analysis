@@ -1,7 +1,8 @@
 ![nba-logo](https://user-images.githubusercontent.com/79231882/222925701-07bb1b9e-0659-4d7e-9609-6c2c52e7e89b.jpg)
-
-
-
+<br/>
+<br/>
+<br/>
+<br/>
 Dataset was downloaded accessing the link below (Kaggle project):
 
 https://www.kaggle.com/datasets/wyattowalsh/basketball
