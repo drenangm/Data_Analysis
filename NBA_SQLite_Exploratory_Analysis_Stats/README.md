@@ -3,7 +3,7 @@
 <br/>
 <br/>
 <br/>
-Dataset was downloaded accessing the link below (Kaggle project):
+<b>Dataset was downloaded accessing the link below (Kaggle project):</b>
 
 https://www.kaggle.com/datasets/wyattowalsh/basketball
 <br/>
