@@ -5,10 +5,10 @@
 Dataset was downloaded accessing the link below (Kaggle project):
 
 https://www.kaggle.com/datasets/wyattowalsh/basketball
-
-
-
-
+<br/>
+<br/>
+<br/>
+<br/>
 1- You must download NBA Database (daily uptdated)
 
 2- Unzip the files in your directory (pay attention to your local path)
